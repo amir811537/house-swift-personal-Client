@@ -1,0 +1,14 @@
+ul a.active {
+    color: #FCA129 !important;
+    background: none !important;
+    font-weight: bolder !important;
+}
+ul a{
+    font-size: 18px;
+    transition: all .3s;
+}
+ul a:hover{
+    background: none !important;
+    color: #FCA129 !important;
+    /* text-decoration: underline; */
+}

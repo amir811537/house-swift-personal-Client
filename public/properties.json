@@ -1,0 +1,57 @@
+[
+    {
+      "id": 101,
+      "name": "Sunny Villa",
+      "location": "789 Sunshine Street, Bright City",
+      "image": "https://i.ibb.co/Hr3j79S/222.jpg",
+      "description": "A spacious villa with large windows and plenty of natural light.",
+      "rent_price": 2800,
+      "available_quantity": 2
+    },
+    {
+      "id": 102,
+      "name": "Urban Retreat",
+      "location": "567 Downtown Blvd, Metroville",
+      "image": "https://i.ibb.co/v4tF5bW/g1-2.jpg",
+      "description": "Modern apartment with a rooftop garden for urban relaxation.",
+      "rent_price": 2200,
+      "available_quantity": 1
+    },
+    {
+      "id": 103,
+      "name": "Riverside Haven",
+      "location": "321 Riverwalk Lane, Tranquil Town",
+      "image": "https://i.ibb.co/PGjxFyb/g1-3.jpg",
+      "description": "A peaceful home by the river, perfect for nature enthusiasts.",
+      "rent_price": 1900,
+      "available_quantity": 3
+    },
+    {
+      "id": 104,
+      "name": "Mountain Chalet",
+      "location": "456 Summit Road, Alpine Village",
+      "image": "https://i.ibb.co/Hr3j79S/222.jpg",
+      "description": "Cozy chalet nestled in the mountains with breathtaking views.",
+      "rent_price": 3200,
+      "available_quantity": 1
+    },
+    {
+      "id": 105,
+      "name": "Downtown Penthouse",
+      "location": "987 Skyscraper Avenue, Cityscape",
+      "image": "https://i.ibb.co/xS8H2Xg/g1-4.jpg",
+      "description": "Luxurious penthouse with panoramic views of the city skyline.",
+      "rent_price": 4000,
+      "available_quantity": 2
+    },
+    {
+      "id": 106,
+      "name": "Lakeside Cottage",
+      "location": "23 Serenity Lane, Lakeshore Retreat",
+      "image": "https://i.ibb.co/Hr3j79S/222.jpg",
+      "description": "Charming cottage by the lake, perfect for a tranquil getaway.",
+      "rent_price": 1700,
+      "available_quantity": 2
+    }
+  ]
+  

@@ -88,14 +88,11 @@ const Mybooking = () => {
       body: JSON.stringify(orders),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log("Order submitted successfully:", data);
-        // Here you can handle the response from the server
+      .then(result =>{
+window.location.replace(result.url)
+
+        console.log(result)
       })
-      .catch((error) => {
-        console.error("Error submitting order:", error);
-        // Here you can handle errors from the server or network
-      });
   };
   
   

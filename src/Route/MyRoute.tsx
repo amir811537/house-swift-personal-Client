@@ -28,6 +28,8 @@ import AgentAddedProperty from "../Pages/Dashboard/AgentRentedProperties/AgentAd
 import Mybooking from "../Pages/Dashboard/Mybooking/Mybooking";
 import Updatebooking from "../Pages/Dashboard/Mybooking/Updatebooking";
 import UserReviews from "../Pages/Home/Reviews/UserReviews";
+import PaymentSuccess from "../Pages/paymentInfo/PaymentSuccess";
+import PaymentFail from "../Pages/paymentInfo/PaymentFail";
 
 // import BlogDetails from "../Pages/Home/Blog/BlogDetails";
 
@@ -101,6 +103,14 @@ const MyRoute = createBrowserRouter([
       {
         path: "/register",
         element: <SignUp></SignUp>,
+      },
+      {
+path:'/payment/success/:tranId',
+element:<PaymentSuccess></PaymentSuccess>
+      },
+      {
+path:'/payment/fail/:tranId',
+element:<PaymentFail></PaymentFail>
       },
       {
         path: "/blogDetails/:id",
@@ -188,6 +198,7 @@ const MyRoute = createBrowserRouter([
         path: "myAddedProperties",
         element: <AgentAddedProperty></AgentAddedProperty>,
       },
+      
     ],
   },
 ]);

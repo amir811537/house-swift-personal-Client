@@ -72,7 +72,8 @@ const Home = () => {
       <Banner />
       <Search></Search>
       <Populars></Populars>
-      <Blog></Blog>
+
+<Blog></Blog>
     </div>
   );
 };

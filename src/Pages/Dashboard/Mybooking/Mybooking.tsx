@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Providers/AuthProvider/AuthProvider";
 import axios from "axios";
 import Mybookingcard from "./Mybookingcard";
 import Swal from "sweetalert2";
+import dipjolIMg from "./../.././../assets/images/dipjol.jpg"
 
 const Mybooking = () => {
   const { user } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const Mybooking = () => {
   };
 
   // console.log("----------->",bookings)
-  const handelCencel = (id) => {
+  const handelCencel = (id: never) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -112,16 +113,36 @@ window.location.replace(result.url)
 
         
       </div>
-<div className="my-10 flex mx-auto">
-<button
-          onClick={handleSubmit}
-          className="uppercase w-fit border border-[#09BE51] bg-[#09BE51] hover:bg-transparent text-white py-1 text-lg px-6 md:ml-8 hover:border hover:border-[#09BE51] hover:text-[#09BE51] duration-300 cursor-pointer"
-        >
-          {`Pay now - Total Amount: $${totalAmount}`}
-        </button>
+<div className="my-10">
+{
+  totalAmount > 0 ? (
+<div className="flex justify-center mx-auto">
+  <button
+    onClick={handleSubmit}
+    className="uppercase border border-[#8833a2] bg-[#8833a2] hover:bg-transparent text-white py-1 text-lg px-6 md:ml-8 hover:border hover:border-[#8833a2] hover:text-[#8833a2] duration-300 cursor-pointer"
+  >
+    {`Pay now - Total Amount: $${totalAmount}`}
+  </button>
+</div>
+
+  ) : (
+<div className="flex-1 justify-center items-center">
+<div className="flex justify-center mx-auto">
+  <img className="h-96 w-96" src={dipjolIMg} alt="dipjol img" />
+</div>
+<h2 className="text-center">Please add some house</h2>
+</div>
+
+
+  )
+}
+
 </div>
     </div>
   );
 };
 
 export default Mybooking;
+
+
+// 09BE51

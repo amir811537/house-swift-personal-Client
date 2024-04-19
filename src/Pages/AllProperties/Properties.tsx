@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, JSXElementConstructor, Key, ReactElement, ReactNode, useContext, useEffect, useState } from "react";
+import { ChangeEvent, Key,useContext, useEffect, useState } from "react";
 import SectionTitle from "../../Component/SectionTitle/SectionTitle";
 import { motion } from "framer-motion";
 import { GrFormSearch } from "react-icons/gr";
@@ -11,7 +11,7 @@ import useAllPropertyPagination from "../../hook/useAllPropertyPagination";
 import Recommendation from "./Recommendation";
 import axios from "axios";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
-import Propertyfilter from "./Propertyfilter";
+// import Propertyfilter from "./Propertyfilter";
 // import { dividerClasses } from "@mui/material";
 // import _default from "@emotion/styled";
 
@@ -62,7 +62,7 @@ const handelChange = (e: ChangeEvent<HTMLInputElement>, index: any) => {
 }
 
 useEffect(()=>{
-  const filteredResult = allProperty.filter((item) => {
+  const filteredResult = allProperty.filter((item: { rent_price: any; }) => {
     const rentPrice = item.rent_price; 
 
     return (
@@ -122,10 +122,10 @@ useEffect(()=>{
   useEffect(() => {
     setSelectedType(searchText);
   }, [searchText]);
-  const handleCheckboxChange = (value) => {
+  const handleCheckboxChange = (value: number) => {
     setFilterValues((prevValues) => ({ ...prevValues, [value]: !prevValues[value] }));
   };
-console.log('filter vales are ',filterValues)
+// console.log('filter vales are ',filterValues)
   return (
     <>
       <div className="py-24">

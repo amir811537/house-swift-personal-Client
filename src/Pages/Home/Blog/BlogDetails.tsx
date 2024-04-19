@@ -4,7 +4,7 @@ import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import SubscribeUs from "./SubscribeUs";
 
 interface BlogPost {
-  id: number;
+  _id: string; // Assuming this is the identifier in your database
   blog_category: string;
   title: string;
   image: string;
@@ -19,31 +19,23 @@ const BlogDetails: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
   const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
 
-
   const fetchBlogData = async () => {
     try {
-      if (!id) {
-        console.error("No id provided");
-     // Redirect to home or handle missing id
-        return;
-      }
-
-      const response = await fetch("https://task-management-serverside-ten.vercel.app/alltask");
+      const response = await fetch("http://localhost:4000/blogsData");
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data: BlogPost[] = await response.json();
-      const parsedId = parseInt(id, 10);
+      const parsedId = id ? parseInt(id, 10) : NaN;
 
       if (isNaN(parsedId)) {
         console.error("Invalid id:", id);
-     
         return;
       }
 
-      const selectedBlogPost = data.find((post) => post.id === parsedId);
+      const selectedBlogPost = data.find((post) => post._id === id); // Compare with _id
 
       if (selectedBlogPost) {
         setBlogPost(selectedBlogPost);
@@ -91,7 +83,6 @@ const BlogDetails: React.FC = () => {
             <div className="card-actions justify-end">
               <button
                 className="px-5 py-1 border border-[#09BE51] text-[#09BE51] hover:bg-[#09BE51] hover:text-white duration-300 mt-4"
-          
               >
                 Back
               </button>

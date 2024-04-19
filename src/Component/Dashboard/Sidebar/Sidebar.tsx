@@ -12,8 +12,10 @@ import { FcHome } from 'react-icons/fc';
 import { AiOutlineBars } from 'react-icons/ai';
 import { FaBookmark, FaRegHeart, FaUsers } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
-import { BsHouseAddFill } from 'react-icons/bs';
 import useCheckRole from "../../../hook/useCheckRole";
+import { RiPagesLine } from "react-icons/ri";
+import { MdOutlineAddHomeWork } from "react-icons/md";
+import { RiHomeGearFill } from "react-icons/ri";
 
 
 const Sidebar: React.FC = () => {
@@ -83,7 +85,7 @@ const Sidebar: React.FC = () => {
                     address="/dashboard"
                   />
                       <MenuItem
-                    icon={CgProfile}
+                    icon={MdOutlineAddHomeWork}
                     label='Add Property'
                     address='/dashboard/addProperty'
                   />
@@ -93,7 +95,7 @@ const Sidebar: React.FC = () => {
                     address="/dashboard/manageUsers"
                   />
                   <MenuItem
-                    icon={BsHouseAddFill}
+                    icon={RiHomeGearFill}
                     label="Manage Properties"
                     address="/dashboard/manageProperties"
                   />
@@ -143,7 +145,7 @@ const Sidebar: React.FC = () => {
                     address='/dashboard/wishlist'
                   />
                   <MenuItem
-                    icon={FaRegHeart}
+                    icon={RiPagesLine}
                     label='My Bookings'
                     address='/dashboard/Mybookings'
                   />

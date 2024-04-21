@@ -68,7 +68,7 @@ const MyRoute = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:4000/properties/${params.id}`
+            `https://house-swift-web-creations-server-six.vercel.app/properties/${params.id}`
           ),
       },
       {
@@ -76,13 +76,13 @@ const MyRoute = createBrowserRouter([
         element: <Bookings></Bookings>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:4000/properties/${params.id}`
+            `https://house-swift-web-creations-server-six.vercel.app/properties/${params.id}`
           ),
       },
       {
         path:'/updatebooking/:id',
         element:<Updatebooking></Updatebooking>,
-        loader:({params})=>fetch(`http://localhost:4000/mybooking/${params.id}`)
+        loader:({params})=>fetch(`https://house-swift-web-creations-server-six.vercel.app/mybooking/${params.id}`)
       },
       {
         path: "/login",
@@ -121,7 +121,7 @@ element:<PaymentFail></PaymentFail>
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:4000/blogsData/${params.id}`
+            `https://house-swift-web-creations-server-six.vercel.app/blogsData/${params.id}`
           ),
       },
     ],

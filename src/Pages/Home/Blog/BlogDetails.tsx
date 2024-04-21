@@ -21,7 +21,7 @@ const BlogDetails: React.FC = () => {
 
   const fetchBlogData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/blogsData");
+      const response = await fetch("https://house-swift-web-creations-server-six.vercel.app/blogsData");
 
       if (!response.ok) {
         throw new Error("Network response was not ok");

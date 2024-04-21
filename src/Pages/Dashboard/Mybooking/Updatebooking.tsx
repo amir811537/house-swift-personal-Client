@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {  useLoaderData, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
@@ -41,7 +42,6 @@ const Updatebooking = () => {
         area,
         district,
         rent_price,
-        propertyRent,
         agent_email,
         agent_name,
         available_quantity,
@@ -52,11 +52,7 @@ const Updatebooking = () => {
         Chack_In_Date,
         Chack_out_Date,
         _id
-      } = updatebookingdata;
-
-
-
-      
+      } : any = updatebookingdata;
       const updateBooking: SubmitHandler<Inputs> = async (data) => {
         const Chack_In_Date = data.Chack_In_Date;
         const Chack_out_Date = data.Chack_out_Date;
@@ -78,12 +74,12 @@ const Updatebooking = () => {
           agent_image,
           userEmail
         };
-        console.log(mybooking);
+        // console.log(mybooking);
     
         try {
           // Replace the axiosPublic.post with axios.post
           const res = await axios.patch(
-            `http://localhost:4000/mybooking/${_id}`,
+            `https://house-swift-web-creations-server-six.vercel.app/mybooking/${_id}`,
             mybooking
           );
     

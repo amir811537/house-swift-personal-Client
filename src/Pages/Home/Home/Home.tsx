@@ -28,7 +28,7 @@ const Home = () => {
 
         // Make sure to await the axios.post call
         const res = await axios.post(
-          "https://task-management-serverside-ten.vercel.app/allUserToken",
+          "https://house-swift-web-creations-server-six.vercel.app/allUserToken",
           {
             token,
           }

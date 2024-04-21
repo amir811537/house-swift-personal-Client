@@ -1,5 +1,4 @@
-import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
-import useAxiosPublic from "../../../hook/useAxiosPublic";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
@@ -28,12 +27,28 @@ type Inputs = {
   area: number;
 };
 
+interface BookingData {
+  name: string;
+  upazila: string;
+  area: number;
+  district: string;
+  rent_price: number;
+  propertyRent: number;
+  agent_email: string;
+  agent_name: string;
+  available_quantity: number;
+  bedroom: number;
+  bathroom: number;
+  image: string;
+  agent_image: string;
+}
 export const Bookings = () => {
+  
   // const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
   // console.log(user?.email)
   const { register, handleSubmit } = useForm<Inputs>();
-  const bookingData = useLoaderData();
+  const bookingData: BookingData = useLoaderData() as BookingData;
   // console.log(bookingData);
   const navigate= useNavigate();
   const {
@@ -42,7 +57,6 @@ export const Bookings = () => {
     area,
     district,
     rent_price,
-    propertyRent,
     agent_email,
     agent_name,
     available_quantity,
@@ -51,7 +65,6 @@ export const Bookings = () => {
     image,
     agent_image,
   } = bookingData;
-
   const addBooking: SubmitHandler<Inputs> = async (data) => {
     const Chack_In_Date = data.Chack_In_Date;
     const Chack_out_Date = data.Chack_out_Date;
@@ -78,7 +91,7 @@ export const Bookings = () => {
     try {
       // Replace the axiosPublic.post with axios.post
       const res = await axios.post(
-        "http://localhost:4000/mybooking",
+        "https://house-swift-web-creations-server-six.vercel.app/mybooking",
         mybooking
       );
 

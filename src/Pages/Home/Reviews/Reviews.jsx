@@ -9,7 +9,7 @@ export default function Reviews() {
   const [allReviews, setAllReview] = useState([]);
   useEffect(() => {
     fetch(
-      "http://localhost:4000/allRewiews"
+      "https://house-swift-web-creations-server-six.vercel.app/allRewiews"
     )
       .then((res) => res.json())
       .then((data) => setAllReview(data));

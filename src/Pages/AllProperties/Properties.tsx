@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, Key,useContext, useEffect, useState } from "react";
+import { Key,useContext, useEffect, useState } from "react";
 import SectionTitle from "../../Component/SectionTitle/SectionTitle";
 import { motion } from "framer-motion";
 import { GrFormSearch } from "react-icons/gr";
@@ -32,7 +32,7 @@ const Properties = () => {
 // const [allproduct,setAllproduct]=useState([]);
 
 // useEffect(()=>{
-//   axios.get("http://localhost:4000/properties").then((res) => {
+//   axios.get("https://house-swift-web-creations-server-six.vercel.app/properties").then((res) => {
 //     setAllproduct(res.data);
 //   });
 
@@ -41,25 +41,26 @@ const Properties = () => {
 
 
 // console.log(allproduct)
-const [selected,setSelected]=useState<string[]>([])
-const [filterValues, setFilterValues] = useState({
+// const [selected,setSelected]=useState<string[]>([])
+const [filterValues, setFilterValues] = useState<{ [key: number]: boolean }>({
   100: false,
   500: false,
   1000: false,
   1500: false,
   2000: false,
 });
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-const handelChange = (e: ChangeEvent<HTMLInputElement>, index: any) => {
-  const activeData = e.target.checked;
-  console.log(activeData, "activedata");
 
-  if (activeData === true) {
-    setSelected(oldData => [...oldData, e.target.value]);
-  } else {
-    setSelected(selected.filter(values=>values!==e.target.value));
-  }
-}
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+// const handelChange = (e: ChangeEvent<HTMLInputElement>) => {
+//   const activeData = e.target.checked;
+//   console.log(activeData, "activedata");
+
+//   if (activeData === true) {
+//     setSelected(oldData => [...oldData, e.target.value]);
+//   } else {
+//     setSelected(selected.filter(values=>values!==e.target.value));
+//   }
+// }
 
 useEffect(()=>{
   const filteredResult = allProperty.filter((item: { rent_price: any; }) => {
@@ -88,7 +89,7 @@ useEffect(()=>{
     if (selectedValue.length > 0) {
       axios
         .get(
-          `http://localhost:4000/recommendation?searchData=${selectedValue}`
+          `https://house-swift-web-creations-server-six.vercel.app/recommendation?searchData=${selectedValue}`
         )
         .then((res) => {
           setRecommendationText(res.data);

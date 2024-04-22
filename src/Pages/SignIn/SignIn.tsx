@@ -35,6 +35,7 @@ const SignIn = () => {
             email: result?.user?.email,
             name: result?.user?.displayName,
             photo: result?.user?.photoURL,
+            role:"user"
           };
           axiosPublic.post("/propertyUsers", usersInfo);
           navigate(location?.state ? location.state : "/");

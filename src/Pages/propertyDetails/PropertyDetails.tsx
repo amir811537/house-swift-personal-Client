@@ -88,7 +88,7 @@ const PropertyDetails: React.FC = () => {
       };
 
       const res = await axios.post(
-        "https://house-swift-web-creations-server-six.vercel.app/allRewiews",
+        "https://house-swift-wFeb-creations-server-six.vercel.app/allRewiews",
         {
           allReviewData,
         }

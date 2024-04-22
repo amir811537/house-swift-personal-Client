@@ -122,7 +122,8 @@ export const Bookings = () => {
         <SectionTitle first="confirm" second="booking"></SectionTitle>
       </div>
 
-      <form onSubmit={handleSubmit(addBooking)} className="mx-auto">
+    <div className="px-3">
+    <form onSubmit={handleSubmit(addBooking)} className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative z-0 w-full mb-5 group">
             <input
@@ -362,6 +363,7 @@ export const Bookings = () => {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 };
